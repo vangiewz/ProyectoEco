@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Navbar from '../components/Navbar'
 import AuthBackground from '../components/AuthBackground'
 import Wrapper from '../components/Wrapper'
 import { useAuth } from '../context/AuthContext'

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabaseClient'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/navbar'
 import AuthBackground from '../components/AuthBackground'
 import '../App.css'
 

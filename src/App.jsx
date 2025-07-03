@@ -1,6 +1,5 @@
-// App.jsx (solo muestro el bloque de las cards, igual al tuyo)
 import React from 'react'
-import Navbar from './components/Navbar'
+import Navbar from './components/navbar'
 import AuthBackground from './components/AuthBackground'
 import './App.css'
 
