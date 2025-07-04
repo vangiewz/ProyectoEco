@@ -12,11 +12,14 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.50.3",
     "bootstrap": "^5.3.7",
+    "dayjs": "^1.11.13",
+    "jspdf": "^3.0.1",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3",
-    "react-toastify": "^11.0.5"
+    "react-toastify": "^11.0.5",
+    "recharts": "^3.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
