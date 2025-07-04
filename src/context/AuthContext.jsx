@@ -41,9 +41,9 @@ export const AuthProvider = ({ children }) => {
 
   // Función de logout
   const signOutUser = async () => {
-    await supabase.auth.signOut()
-    setUser(null)
-  }
+  await supabase.auth.signOut()
+  window.location.href = '/login'
+}
 
   return (
     <AuthContext.Provider value={{

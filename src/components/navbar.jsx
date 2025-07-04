@@ -1,27 +1,21 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { supabase } from '../utils/supabaseClient'
+import { useAuth } from '../context/AuthContext'
 import logo from '/logo.png'
 import avatar from '../assets/auth2.png'
 
 const Navbar = () => {
-  const navigate = useNavigate()
+  const { signOutUser } = useAuth()
 
-  const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut()
-    if (error) {
-      console.error('Error al cerrar sesión:', error.message)
-      return
-    }
-    navigate('/login')
+  const handleLogout = () => {
+    signOutUser()
   }
 
   return (
     <nav
       className="navbar navbar-expand-lg"
       style={{
-        backgroundColor: 'rgba(0, 0, 0, 0.85)', // Fondo semi-transparente negro
-        borderBottom: '2px solid #00ff99'       // Línea verde neon
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        borderBottom: '2px solid #00ff99'
       }}
     >
       <div className="container-fluid">
@@ -35,7 +29,7 @@ const Navbar = () => {
           />
           <span
             className="ms-2 fw-bold d-none d-lg-inline"
-            style={{ color: '#00ff99' }} // Texto verde neon
+            style={{ color: '#00ff99' }}
           >
             Gestión Económico-Financiera
           </span>
