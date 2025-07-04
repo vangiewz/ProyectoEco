@@ -6,6 +6,8 @@ import Login    from './pages/Login'
 import Register from './pages/Register'
 import RegisterTransaction from './pages/RegisterTransaction'
 import Indicators from './pages/Indicators'
+import DashboardGrafico from './pages/DashboardGrafico'
+import ReportsSimulations from './pages/ReportsSimulations'
 
 import PrivateRoute from './components/PrivateRoute'
 import PublicRoute  from './components/PublicRoute'
@@ -40,6 +42,22 @@ export const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <Indicators />
+      </PrivateRoute>
+    )
+  },
+  {
+    path: '/dashboard',
+    element: (
+      <PrivateRoute>
+        <DashboardGrafico />
+      </PrivateRoute>
+    )
+  },
+  {
+    path: '/reportes',
+    element: (
+      <PrivateRoute>
+        <ReportsSimulations />
       </PrivateRoute>
     )
   },
