@@ -15,25 +15,29 @@ const Register = () => {
   const navigate = useNavigate()
 
   const handleSignUp = async e => {
-    e.preventDefault()
-    if (!email || !password || !confirm) {
-      toast.error('Por favor completa todos los campos.')
-      return
-    }
-    if (password !== confirm) {
-      toast.error('Las contraseñas no coinciden.')
-      return
-    }
-    setLoading(true)
-    const { error } = await signUpUser(email, password)
-    setLoading(false)
-    if (error) {
-      toast.error(error.message)
-    } else {
-      toast.success('Registro exitoso! Por favor inicia sesión.')
-      navigate('/login')
-    }
+  e.preventDefault()
+  if (!email || !password || !confirm) {
+    toast.error('Por favor completa todos los campos.')
+    return
   }
+  if (password !== confirm) {
+    toast.error('Las contraseñas no coinciden.')
+    return
+  }
+
+  setLoading(true)
+  const result = await signUpUser(email, password)
+  setLoading(false)
+
+  if (result.success) {
+    toast.success('Registro exitoso. Revisa tu correo para confirmar tu cuenta.', {
+      autoClose: 5000
+    })
+    setTimeout(() => navigate('/login'), 5000)
+  } else {
+    toast.error(result.message)
+  }
+}
 
   return (
     <>

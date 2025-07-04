@@ -33,16 +33,28 @@ export const AuthProvider = ({ children }) => {
   }
 
   // Función de registro
-  const signUpUser = async (email, password) => {
-    const { data, error } = await supabase.auth.signUp({ email, password })
-    if (error) return { success: false, message: error.message }
-    return { success: true, user: data.user }
+ const signUpUser = async (email, password) => {
+  const { data, error } = await supabase.auth.signUp({ email, password })
+
+  if (error) {
+    return { success: false, message: error.message }
   }
+
+  // ⚠️ Casos de duplicado: identities vacío o undefined
+  if (!data?.user?.identities || data.user.identities.length === 0) {
+    return {
+      success: false,
+      message: 'Este correo ya está registrado. Intenta iniciar sesión.'
+    }
+  }
+
+  return { success: true, user: data.user }
+}
 
   // Función de logout
   const signOutUser = async () => {
   await supabase.auth.signOut()
-  window.location.href = '/login'
+  window.location.replace('/login')
 }
 
   return (
