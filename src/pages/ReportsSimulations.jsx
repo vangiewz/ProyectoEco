@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 import { jsPDF } from 'jspdf'
 
 import { supabase } from '../utils/supabaseClient'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/navbar'
 import AuthBackground from '../components/AuthBackground'
 import '../App.css'
 
