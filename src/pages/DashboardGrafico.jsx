@@ -15,7 +15,7 @@ import {
   Line,
 } from "recharts";
 import { supabase } from "../utils/supabaseClient";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar";
 import AuthBackground from "../components/AuthBackground";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
