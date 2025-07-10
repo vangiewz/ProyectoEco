@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from 'react'
 import Navbar from './components/navbar'
 import AuthBackground from './components/AuthBackground'
@@ -11,16 +12,33 @@ function App() {
       <AuthBackground>
         <div className="container my-4">
           <div className="row g-4">
+            {/* Mis Operaciones */}
+            <div className="col-12 col-md-6 col-lg-4">
+              <a href="/operaciones" className="text-decoration-none">
+                <div className="card shadow-sm custom-card hover-effect">
+                  <div className="card-body d-flex align-items-center p-4">
+                    <div className="display-4 me-3">💰</div>
+                    <div>
+                      <h5 className="card-title mb-1">Mis Operaciones</h5>
+                      <p className="card-text text-muted small">
+                        Ver y eliminar transacciones
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
             {/* Registrar Operaciones */}
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 col-lg-4">
               <a href="/transacciones" className="text-decoration-none">
-                <div className="card shadow-sm custom-card">
-                  <div className="card-body d-flex align-items-start">
+                <div className="card shadow-sm custom-card hover-effect">
+                  <div className="card-body d-flex align-items-center p-4">
                     <div className="display-4 me-3">📝</div>
                     <div>
-                      <h5 className="card-title mb-2">Registrar Operaciones</h5>
-                      <p className="card-text">
-                        Alta de ingresos, egresos y demás flujos financieros
+                      <h5 className="card-title mb-1">Registrar Operaciones</h5>
+                      <p className="card-text text-muted small">
+                        Alta de ingresos y egresos
                       </p>
                     </div>
                   </div>
@@ -29,15 +47,15 @@ function App() {
             </div>
 
             {/* Indicadores de Gestión */}
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 col-lg-4">
               <a href="/indicadores" className="text-decoration-none">
-                <div className="card shadow-sm custom-card">
-                  <div className="card-body d-flex align-items-start">
+                <div className="card shadow-sm custom-card hover-effect">
+                  <div className="card-body d-flex align-items-center p-4">
                     <div className="display-4 me-3">📊</div>
                     <div>
-                      <h5 className="card-title mb-2">Indicadores de Gestión</h5>
-                      <p className="card-text">
-                        Punto de equilibrio, flujo de caja y márgenes
+                      <h5 className="card-title mb-1">Indicadores</h5>
+                      <p className="card-text text-muted small">
+                        Punto de equilibrio y márgenes
                       </p>
                     </div>
                   </div>
@@ -46,15 +64,15 @@ function App() {
             </div>
 
             {/* Dashboard Gráfico */}
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 col-lg-4">
               <a href="/dashboard" className="text-decoration-none">
-                <div className="card shadow-sm custom-card">
-                  <div className="card-body d-flex align-items-start">
+                <div className="card shadow-sm custom-card hover-effect">
+                  <div className="card-body d-flex align-items-center p-4">
                     <div className="display-4 me-3">📈</div>
                     <div>
-                      <h5 className="card-title mb-2">Dashboard Gráfico</h5>
-                      <p className="card-text">
-                        Gráficos de evolución y tableros de control
+                      <h5 className="card-title mb-1">Dashboard</h5>
+                      <p className="card-text text-muted small">
+                        Gráficos de evolución
                       </p>
                     </div>
                   </div>
@@ -63,15 +81,15 @@ function App() {
             </div>
 
             {/* Reportes y Simulaciones */}
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 col-lg-4">
               <a href="/reportes" className="text-decoration-none">
-                <div className="card shadow-sm custom-card">
-                  <div className="card-body d-flex align-items-start">
+                <div className="card shadow-sm custom-card hover-effect">
+                  <div className="card-body d-flex align-items-center p-4">
                     <div className="display-4 me-3">📑</div>
                     <div>
-                      <h5 className="card-title mb-2">Reportes y Simulaciones</h5>
-                      <p className="card-text">
-                        Generar informes y simular escenarios
+                      <h5 className="card-title mb-1">Reportes</h5>
+                      <p className="card-text text-muted small">
+                        Informes y simulaciones
                       </p>
                     </div>
                   </div>
