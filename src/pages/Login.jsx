@@ -197,10 +197,7 @@ const Login = () => {
         .login-container {
           min-height: 100vh;
           width: 100vw;
-          position: fixed;
-          top: 0;
-          left: 0;
-          overflow: hidden;
+          position: relative;
         }
 
         /* Background */
@@ -247,7 +244,8 @@ const Login = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 4rem 2rem;
+          padding: 2rem 1rem;
+          box-sizing: border-box;
         }
 
         .login-wrapper {
@@ -530,7 +528,7 @@ const Login = () => {
         /* Responsive */
         @media (max-width: 768px) {
           .login-content {
-            padding: 3rem 1rem;
+            padding: 1.5rem 1rem;
           }
 
           .login-wrapper {
@@ -573,13 +571,8 @@ const Login = () => {
         }
 
         @media (max-width: 480px) {
-          .login-container {
-            padding: 0;
-          }
-
           .login-content {
-            padding: 2rem 1rem;
-            min-height: calc(100vh - 4rem);
+            padding: 1rem 0.5rem;
           }
 
           .login-wrapper {
