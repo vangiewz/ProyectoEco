@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabaseClient'
 import Navbar from '../components/navbar'
-import AuthBackground from '../components/AuthBackground'
 import '../App.css'
 
 const RegisterTransaction = () => {
@@ -81,8 +80,7 @@ const RegisterTransaction = () => {
   return (
     <>
       <Navbar />
-
-      <AuthBackground>
+      <div className="content-wrapper">
         <div className="container my-4">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 col-lg-6">
@@ -163,7 +161,7 @@ const RegisterTransaction = () => {
 
                     <button
                       type="submit"
-                      className="btn btn-success w-100"
+                      className="btn btn-primary w-100"
                       disabled={loading}
                     >
                       {loading ? 'Registrando...' : 'Registrar Operación'}
@@ -174,7 +172,24 @@ const RegisterTransaction = () => {
             </div>
           </div>
         </div>
-      </AuthBackground>
+      </div>
+
+      {/* Estilos CSS */}
+      <style>{`
+        .content-wrapper {
+          margin-top: 120px;
+          min-height: calc(100vh - 120px);
+          padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+          .content-wrapper {
+            margin-top: 100px;
+            min-height: calc(100vh - 100px);
+            padding-top: 15px;
+          }
+        }
+      `}</style>
     </>
   )
 }

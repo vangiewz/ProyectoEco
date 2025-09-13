@@ -16,7 +16,6 @@ import {
 } from "recharts";
 import { supabase } from "../utils/supabaseClient";
 import Navbar from "../components/navbar";
-import AuthBackground from "../components/AuthBackground";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/es";
@@ -144,11 +143,10 @@ const DashboardGrafico = () => {
     return (
       <>
         <Navbar />
-        <AuthBackground>
+          <div style={{ height: 76 }} />
           <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "60vh" }}>
-            <div className="spinner-border text-success" role="status" />
-          </div>
-        </AuthBackground>
+          <div className="spinner-border text-success" role="status" />
+  </div>
       </>
     );
   }
@@ -156,16 +154,16 @@ const DashboardGrafico = () => {
   return (
     <>
       <Navbar />
-      <AuthBackground>
-        <div className="container py-4">
+        <div style={{ height: 76 }} />
+        <div className="container py-5">
           {/* Filtro rango fechas */}
           <form className="row g-3 mb-4 align-items-end">
             <div className="col-12 col-md-4 col-lg-3">
-              <label className="form-label text-light mb-1">Fecha inicio</label>
+              <label className="form-label text-primary mb-1">Fecha inicio</label>
               <input type="date" className="form-control" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
             </div>
             <div className="col-12 col-md-4 col-lg-3">
-              <label className="form-label text-light mb-1">Fecha fin</label>
+              <label className="form-label text-primary mb-1">Fecha fin</label>
               <input type="date" className="form-control" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
             </div>
           </form>
@@ -246,7 +244,6 @@ const DashboardGrafico = () => {
             </div>
           </div>
         </div>
-      </AuthBackground>
     </>
   );
 };

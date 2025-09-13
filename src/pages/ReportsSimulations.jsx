@@ -4,7 +4,6 @@ import { jsPDF } from 'jspdf'
 
 import { supabase } from '../utils/supabaseClient'
 import Navbar from '../components/navbar'
-import AuthBackground from '../components/AuthBackground'
 import '../App.css'
 
 /* ------------ Helper flujo ingreso / egreso ------------ */
@@ -183,12 +182,12 @@ const ReportsSimulations = () => {
   return (
     <>
       <Navbar />
-      <AuthBackground>
+      <div className="content-wrapper">
         <div className="container py-4 pb-5">
           {/* ---------- Filtro ---------- */}
           <div className="row g-3 align-items-end mb-3">
             <div className="col-12 col-md-4 col-lg-3">
-              <label className="form-label text-light">Fecha inicio</label>
+              <label className="form-label text-primary">Fecha inicio</label>
               <input
                 type="date"
                 className="form-control"
@@ -198,7 +197,7 @@ const ReportsSimulations = () => {
             </div>
 
             <div className="col-12 col-md-4 col-lg-3">
-              <label className="form-label text-light">Fecha fin</label>
+              <label className="form-label text-primary">Fecha fin</label>
               <input
                 type="date"
                 className="form-control"
@@ -209,7 +208,7 @@ const ReportsSimulations = () => {
 
             <div className="col-6 col-md-4 col-lg-3 d-grid">
               <button
-                className="btn btn-success"
+                className="btn btn-primary"
                 onClick={fetchReport}
                 disabled={loading}
               >
@@ -254,7 +253,7 @@ const ReportsSimulations = () => {
           {/* ---------- Simulador ---------- */}
           <div className="row mb-4">
             <div className="col-12">
-              <h4 className="text-center fw-bold" style={{ color: '#00ff99' }}>
+              <h4 className="text-center fw-bold" style={{ color: '#000080' }}>
                 Simular cambios de Precio / Cantidad
               </h4>
             </div>
@@ -361,7 +360,24 @@ const ReportsSimulations = () => {
             </div>
           </div>
         </div>
-      </AuthBackground>
+      </div>
+
+      {/* Estilos CSS */}
+      <style>{`
+        .content-wrapper {
+          margin-top: 120px;
+          min-height: calc(100vh - 120px);
+          padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+          .content-wrapper {
+            margin-top: 100px;
+            min-height: calc(100vh - 100px);
+            padding-top: 15px;
+          }
+        }
+      `}</style>
     </>
   )
 }

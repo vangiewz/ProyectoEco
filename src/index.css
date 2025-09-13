@@ -9,6 +9,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.navbar-spacer { height: 76px; }
+
 body {
   margin: 0;
   width: 100%;

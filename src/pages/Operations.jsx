@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabaseClient'
 import Navbar from '../components/navbar'
-import AuthBackground from '../components/AuthBackground'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import '../App.css'
@@ -109,14 +108,14 @@ export default function Operations() {
   return (
     <>
       <Navbar />
-      <AuthBackground>
+
         <div className="container py-5">
           <h2 className="text-light mb-4">Mis Operaciones</h2>
 
           {/* Filtrado por fecha */}
           <div className="row g-3 align-items-end mb-4">
             <div className="col-12 col-md-5 col-lg-3">
-              <label className="form-label text-light">Fecha inicio</label>
+              <label className="form-label text-primary">Fecha inicio</label>
               <input
                 type="date"
                 className="form-control"
@@ -125,7 +124,7 @@ export default function Operations() {
               />
             </div>
             <div className="col-12 col-md-5 col-lg-3">
-              <label className="form-label text-light">Fecha fin</label>
+              <label className="form-label text-primary">Fecha fin</label>
               <input
                 type="date"
                 className="form-control"
@@ -135,7 +134,7 @@ export default function Operations() {
             </div>
             <div className="col-12 col-md-2 col-lg-2">
               <button
-                className="btn btn-success w-100"
+                className="btn btn-primary w-100"
                 onClick={fetchTransactions}
                 disabled={loading}
               >
@@ -144,7 +143,7 @@ export default function Operations() {
             </div>
             <div className="col-12 col-md-2 col-lg-2">
               <button
-                className="btn btn-secondary w-100"
+                className="btn btn-primary w-100"
                 onClick={clearFilters}
                 disabled={loading}
               >
@@ -178,7 +177,7 @@ export default function Operations() {
                       </td>
                       <td>
                         <button
-                          className="btn btn-sm btn-danger"
+                          className="btn btn-sm btn-primary"
                           onClick={() => requestDelete(tx.id)}
                           disabled={loading}
                         >
@@ -199,7 +198,6 @@ export default function Operations() {
           )}
         </div>
         <ToastContainer position="top-right" autoClose={3000} />
-      </AuthBackground>
     </>
   )
 }
