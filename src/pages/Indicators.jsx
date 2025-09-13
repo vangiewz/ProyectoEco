@@ -146,7 +146,7 @@ const calcEPD = () => {
           <div className="col-12">
             <div className="d-flex flex-column flex-md-row align-items-md-end gap-3">
               <div className="flex-fill">
-                <label className="form-label text-light">Fecha inicio</label>
+                <label className="form-label text-primary">Fecha inicio</label>
                 <input
                   type="date"
                   className="form-control"
@@ -155,7 +155,7 @@ const calcEPD = () => {
                 />
               </div>
               <div className="flex-fill">
-                <label className="form-label text-light">Fecha fin</label>
+                <label className="form-label text-primary">Fecha fin</label>
                 <input
                   type="date"
                   className="form-control"
