@@ -218,7 +218,7 @@ const ReportsSimulations = () => {
 
             <div className="col-6 col-md-6 col-lg-3 d-grid">
               <button
-                className="btn btn-outline-light"
+                className="btn btn-primary"
                 onClick={downloadPdf}
                 disabled={loading}
               >
